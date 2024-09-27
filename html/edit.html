@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление товарами</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* расстояние между формами */
+        }
+        form {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 30%; /* ширина каждой формы */
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="submit"], button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"], button {
+            background-color: #1e6dce;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, button:hover {
+            background-color: #004aad;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Управление товарами</h1>
+
+<div class="form-container">
+    <form id="add-group" action="/edit/add" method="POST">
+        <h2>Добавить товар</h2>
+        <label for="itemName">Название товара:</label>
+        <input type="text" id="itemName" name="name" required>
+
+        <label for="id">ID товара:</label>
+        <input type="text" id="id" name="id" required>
+
+        <label for="categoryID">ID категории:</label>
+        <input type="text" id="categoryID" name="categoryID" required>
+
+        <label for="quantity">Количество товара:</label>
+        <input type="text" id="quantity" name="quantity" required>
+
+        <label for="price">Цена:</label>
+        <input type="text" id="price" name="price" required>
+
+        <input type="submit" value="Добавить">
+    </form>
+
+    <form id="delete-group" action="/edit/delete" method="POST">
+        <h2>Удалить товар</h2>
+        <label for="group-id">ID товара:</label>
+        <input type="text" id="deleteGroupID" name="id" required>
+
+        <button type="submit">Удалить</button>
+    </form>
+
+    <form id="edit-group" action="/edit/edit" method="POST">
+        <h2>Редактировать товар</h2>
+        <label for="group-name">Название товара:</label>
+        <input type="text" id="editGroupName" name="name" required>
+
+        <label for="group-id">ID товара:</label>
+        <input type="text" id="editGroupID" name="id" required>
+
+        <label for="categoryID">ID категории:</label>
+        <input type="text" id="categoryID" name="categoryID" required>
+ 
+        <label for="quantity">Количество товара:</label>
+        <input type="text" id="quantity" name="quantity" required>
+
+         
+        <label for="price">Цена товара:</label>
+        <input type="text" id="price" name="price" required>
+
+        <input type="submit" value="Редактировать">
+    </form>
+</div>
+
+</body>
+</html>
